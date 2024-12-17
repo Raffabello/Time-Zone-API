@@ -2,7 +2,12 @@ const readline = require("readline");
 
 
 function main(){
-    const rl = readline.createInterface({
+    displayGuidelines();
+    promptTown();
+}
+
+
+const rl = readline.createInterface( {
         input:process.stdin,
         output:process.stdout,
     });
