@@ -6,10 +6,15 @@ function main(){
         input:process.stdin,
         output:process.stdout,
     });
-    displayGuidelines();
-    rl.question("Enter the name of a town:", (town) => {
-        console.log("You entered", town);
+
+function promptTown(){
+
+    rl.question("Enter the name of the town:", (town) => {
+        if(town == "nowhere")
         rl.close();
+        else{
+            promptTown();
+        }
     })
 }
 
