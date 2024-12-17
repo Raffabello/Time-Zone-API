@@ -1,22 +1,21 @@
 const readline = require("readline");
 
+const rl = readline.createInterface( {
+    input:process.stdin,
+    output:process.stdout,
+});
+
 
 function main(){
     displayGuidelines();
     promptTown();
 }
 
-
-const rl = readline.createInterface( {
-        input:process.stdin,
-        output:process.stdout,
-    });
-
 function promptTown(){
 
     rl.question("Enter the name of the town:", (town) => {
         if(town == "nowhere")
-        rl.close();
+            rl.close();
         else{
             promptTown();
         }
@@ -30,5 +29,6 @@ function displayGuidelines(){
     console.log("- Enter \x1b[32mnowhere\x1b[0m to quit the program.")
     console.log("----------------|\n<Enjoy>");
 }
+
 
 main();
